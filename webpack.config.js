@@ -1,12 +1,14 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Path = require("path");
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
   const config = {
     entry: "./src/index.js",
     output: {
-      filename: "bundle.js"
+      filename: "bundle.js",
+      path: Path.resolve(__dirname, 'review_build')
     },
     module: {
       rules: [
